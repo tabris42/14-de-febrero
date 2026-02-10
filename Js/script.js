@@ -2,7 +2,7 @@
 
 // Ajuste de velocidad del árbol (más alto = más lento)
 const TREE_SLOW_MULT = 3.0;       // prueba 1.6 / 2.0 / 2.5
-const MOVE_SCALE_MS = 1800;       // debe coincidir con CSS (1.8s)
+const MOVE_SCALE_MS = 3000;       // debe coincidir con CSS (1.8s)
 
 // Arranque manual (Tap para empezar)
 document.addEventListener('DOMContentLoaded', () => {
