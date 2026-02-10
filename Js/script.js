@@ -53,9 +53,9 @@ function loadAndAnimateTree() {
       // Forzar reflow y luego animar
       setTimeout(() => {
         allPaths.forEach((path, i) => {
-          const dur = 1200 * TREE_SLOW_MULT;
-          const delay = i * 80 * TREE_SLOW_MULT;
-          const fillDelayBase = 900 * TREE_SLOW_MULT;
+          const dur = 2800 * TREE_SLOW_MULT;
+          const delay = i * 160 * TREE_SLOW_MULT;
+          const fillDelayBase = 2200 * TREE_SLOW_MULT;
 
           path.style.transition =
             `stroke-dashoffset ${dur}ms cubic-bezier(.77,0,.18,1) ${delay}ms, ` +
