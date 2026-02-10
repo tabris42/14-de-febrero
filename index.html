@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Ti ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="Css/style.css">
+  <link rel="stylesheet" href="Css/style.mobile.css">
+
+  <!-- Estilos mínimos del latido de corazones -->
+  <style>
+    .animated-heart {
+      animation: beat 1.2s infinite ease-in-out;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.12); }
+      50% { transform: scale(0.95); }
+      75% { transform: scale(1.08); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Pantalla inicial: Tap para empezar -->
+  <div id="start-overlay" class="start-overlay">
+    <div class="start-card">
+      <div class="start-title">💘 Tengo una sorpresa</div>
+      <div class="start-subtitle">Toca para comenzar</div>
+      <button id="start-btn" class="start-btn">▶️ Empezar</button>
+    </div>
+  </div>
+
+  <!-- Contenedor del árbol SVG -->
+  <div id="tree-container" class="tree-container"></div>
+
+  <!-- Texto de dedicatoria -->
+  <div id="dedication-text" class="dedication-text"></div>
+
+  <!-- Objetos flotantes (pétalos/corazones) -->
+  <div id="floating-objects" class="floating-objects"></div>
+
+  <!-- Contador -->
+  <div id="countdown" class="countdown"></div>
+
+  <!-- Música de fondo -->
+  <audio id="background-music" preload="auto" loop>
+    <source src="Music/musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- Script principal -->
+  <script src="Js/script.js"></script>
+
+</body>
+</html>
