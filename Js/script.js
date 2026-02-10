@@ -110,11 +110,11 @@ function showDedicationText() { //seguidores
   let text = getURLParam('text');
   if (!text) {
     text = `Para el amor de mi vida:
-Desde que nos conocimos en aquilla obra de servicio construyendo casas,
+Desde que nos conocimos en aquella obra de servicio construyendo casas,
 supe que estaríamos juntos por siempre.
 Gracias por acompañarme en cada paso,
 por entenderme incluso en silencio y por
-llenar mis dias con amo.
+llenar mis días con amor.
 Te amo más de lo que las palabras pueden
 expresar...`;
   }
