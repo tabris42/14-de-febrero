@@ -1,0 +1,52 @@
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .tree-container {
+    width: 420px;
+    height: 420px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .tree-container svg.move-and-scale {
+    transition: transform 1.8s cubic-bezier(.77,0,.18,1); /* más lento */
+    transform: translateY(60px) scale(1.18);
+  }
+
+  .dedication-text {
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px);
+    max-width: 360px;
+    padding: 14px 14px;
+  }
+
+  .typing-text {
+    font-size: 1.2rem;
+  }
+
+  .signature {
+    font-size: 1rem;
+  }
+
+  .countdown {
+    bottom: 12px;
+    left: 12px;
+    padding: 10px 12px;
+  }
+
+  .count-line {
+    font-size: 0.92rem;
+  }
+
+  .music-btn {
+    top: 12px;
+    right: 12px;
+    padding: 9px 12px;
+  }
+}
