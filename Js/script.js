@@ -1,8 +1,11 @@
 //© Zero - Código libre no comercial
 
 // Ajuste de velocidad del árbol (más alto = más lento)
-const TREE_SLOW_MULT = 2.0;       // prueba 1.6 / 2.0 / 2.5
+const TREE_SLOW_MULT = 2.5;       // prueba 1.6 / 2.0 / 2.5
 const MOVE_SCALE_MS = 3000;       // debe coincidir con CSS (1.8s)
+
+// ✅ Foto: aparece un poco antes de terminar el texto (en caracteres)
+const PHOTO_SHOW_BEFORE_END = 35; // prueba 20 / 35 / 60
 
 // Arranque manual (Tap para empezar)
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,6 +126,13 @@ expresar...`;
   dedicationElement.style.display = 'block';
   dedicationElement.innerHTML = '';
 
+  // ✅ Referencia a la foto (ya está en el HTML)
+  const photoEl = document.getElementById('couple-photo');
+  if (photoEl) {
+    // por si quedó visible de antes
+    photoEl.classList.remove('show');
+  }
+
   // Crear un elemento para el texto con efecto typing
   const typingElement = document.createElement('div');
   typingElement.classList.add('typing-text');
@@ -132,12 +142,21 @@ expresar...`;
   let signature = getURLParam('signature');
   if (!signature) signature = 'Con amor, Adriancito 💖';
 
-  // Máquina de escribir (velocidad se mantiene igual)
+  // Máquina de escribir
   let i = 0;
+  let photoShown = false;
+
   function typeWriter() {
     if (i < text.length) {
       typingElement.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
       i++;
+
+      // ✅ Mostrar foto un poco antes de terminar
+      if (!photoShown && photoEl && i >= (text.length - PHOTO_SHOW_BEFORE_END)) {
+        photoShown = true;
+        photoEl.classList.add('show');
+      }
+
       setTimeout(typeWriter, 80); // velocidad letras
     } else {
       // Al terminar, agrega firma
@@ -145,6 +164,9 @@ expresar...`;
       signatureElement.classList.add('signature');
       signatureElement.innerHTML = signature;
       dedicationElement.appendChild(signatureElement);
+
+      // ✅ Asegura que la foto quede visible al final
+      if (photoEl) photoEl.classList.add('show');
     }
   }
 
