@@ -133,6 +133,12 @@ expresar...`;
     photoEl.classList.remove('show');
   }
 
+  // ✅ NUEVO: resetear el mensaje "Feliz 14 de febrero"
+  const valMsg = document.getElementById('valentine-message');
+  if (valMsg) {
+    valMsg.style.opacity = '0';
+  }
+
   // Crear un elemento para el texto con efecto typing
   const typingElement = document.createElement('div');
   typingElement.classList.add('typing-text');
@@ -155,6 +161,13 @@ expresar...`;
       if (!photoShown && photoEl && i >= (text.length - PHOTO_SHOW_BEFORE_END)) {
         photoShown = true;
         photoEl.classList.add('show');
+
+        // ✅ NUEVO: mostrar el mensaje después de que aparezca la foto (con fade)
+        if (valMsg) {
+          setTimeout(() => {
+            valMsg.style.opacity = '1';
+          }, 600);
+        }
       }
 
       setTimeout(typeWriter, 80); // velocidad letras
@@ -167,6 +180,9 @@ expresar...`;
 
       // ✅ Asegura que la foto quede visible al final
       if (photoEl) photoEl.classList.add('show');
+
+      // ✅ Asegura que el mensaje también quede visible al final
+      if (valMsg) valMsg.style.opacity = '1';
     }
   }
 
