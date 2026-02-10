@@ -138,7 +138,7 @@ expresar...`;
     if (i < text.length) {
       typingElement.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
       i++;
-      setTimeout(typeWriter, 40); // velocidad letras
+      setTimeout(typeWriter, 80); // velocidad letras
     } else {
       // Al terminar, agrega firma
       const signatureElement = document.createElement('div');
