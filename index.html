@@ -5,11 +5,16 @@
   <title>Para Ti ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS principal -->
+  <!-- CSS principal (NO lo tocamos) -->
   <link rel="stylesheet" href="Css/style.css">
   <link rel="stylesheet" href="Css/style.mobile.css">
 
-  <!-- Estilos mínimos del latido de corazones -->
+  <!-- ✅ NUEVO: Fuentes bonitas (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos mínimos del latido de corazones + overrides de tipografías -->
   <style>
     .animated-heart {
       animation: beat 1.2s infinite ease-in-out;
@@ -22,6 +27,28 @@
       25% { transform: scale(1.12); }
       50% { transform: scale(0.95); }
       75% { transform: scale(1.08); }
+    }
+
+    /* ✅ NUEVO: Fuente general más linda (sin tocar tu CSS) */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    /* ✅ NUEVO: Texto dentro del cuadro más bonito */
+    .typing-text {
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1.4rem;     /* un poco más grande */
+      line-height: 1.65;     /* más aire */
+      font-weight: 400;
+      color: #333;
+    }
+
+    /* ✅ NUEVO: Firma más elegante */
+    .signature {
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.2px;
     }
   </style>
 </head>
@@ -43,7 +70,7 @@
   <!-- Texto de dedicatoria -->
   <div id="dedication-text" class="dedication-text"></div>
 
-  <!-- ✅ Foto final (aparece casi al terminar el texto) -->
+  <!-- Foto -->
   <img
     id="couple-photo"
     class="couple-photo"
@@ -52,7 +79,27 @@
     loading="lazy"
   />
 
-  <!-- Objetos flotantes (pétalos/corazones) -->
+  <!-- ✅ Mensaje "Feliz 14 de febrero" (solo estilo cambiado: más grande y otra letra) -->
+  <div id="valentine-message" style="
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #e60026;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 4;
+    pointer-events: none;
+    text-shadow: 0 6px 18px rgba(230, 0, 38, 0.18);
+  ">
+    💗 Feliz 14 de febrero 💗
+  </div>
+
+  <!-- Objetos flotantes -->
   <div id="floating-objects" class="floating-objects"></div>
 
   <!-- Contador -->
@@ -64,7 +111,7 @@
     Tu navegador no soporta audio.
   </audio>
 
-  <!-- Script principal -->
+  <!-- Script principal (NO lo tocamos) -->
   <script src="Js/script.js"></script>
 
 </body>
